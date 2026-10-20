@@ -1,0 +1,16 @@
+{
+  "name": "envio-email",
+  "version": "1.0.0",
+  "description": "Projeto de envio de e-mail com Express, EJS, dotenv e Nodemailer",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^5.0.1",
+    "express": "^5.2.1",
+    "nodemailer": "^6.10.1"
+  }
+}

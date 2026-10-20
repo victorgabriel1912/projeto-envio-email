@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envio de e-mail</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="card">
+            <div class="icone" aria-hidden="true">✉</div>
+            <p class="subtitulo">FALE COM A GENTE</p>
+            <h1>Envie um e-mail</h1>
+            <p class="descricao">Preencha os campos abaixo para enviar sua mensagem.</p>
+
+            <% if (mensagem) { %>
+                <div class="alerta sucesso"><%= mensagem %></div>
+            <% } %>
+            <% if (erro) { %>
+                <div class="alerta erro"><%= erro %></div>
+            <% } %>
+
+            <form action="/enviar-email" method="POST">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+                <label for="email">Seu e-mail</label>
+                <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required>
+
+                <label for="assunto">Assunto</label>
+                <input type="text" id="assunto" name="assunto" placeholder="Sobre o que deseja falar?" required>
+
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+
+                <button type="submit">Enviar mensagem <span aria-hidden="true">➜</span></button>
+            </form>
+            <p class="rodape">Sua mensagem será enviada por e-mail com segurança.</p>
+        </section>
+    </main>
+</body>
+</html>
